@@ -1,0 +1,38 @@
+{
+  "name": "basenone",
+  "version": "0.0.0",
+  "description": "Encode Uint8Array to strings and back.",
+  "main": "dist/lib.js",
+  "type": "module",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "tsc && node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mofax/basenone.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "encode",
+    "decode",
+    "hex",
+    "base32",
+    "base64",
+    "binary",
+    "utf8",
+    "utf-8"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mofax/basenone/issues"
+  },
+  "homepage": "https://github.com/mofax/basenone#readme",
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "typescript": "^4.9.5"
+  }
+}
