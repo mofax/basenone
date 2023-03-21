@@ -81,6 +81,22 @@ const raw = baseNone.getRaw();
 const utf8: string = baseNone.toUTF8();
 ```
 
+### Numbers and BigInt
+
+```js
+// static method
+const baseNone = BaseNone.fromNumber(123456789);
+// fromNumber can take a bigint
+const baseNone = BaseNone.fromNumber(BigInt(123456789));
+
+// raw Uint8Array
+const raw = baseNone.getRaw();
+
+// BaseNone to number
+const number: number = baseNone.toNumber();
+const bigInt: bigint = baseNone.toBigInt();
+```
+
 ## In Progress
  - Base 32
  - Base 62
