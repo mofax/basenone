@@ -1,6 +1,6 @@
 {
   "name": "basenone",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Encode Uint8Array to strings and back.",
   "main": "dist/lib.js",
   "type": "module",
