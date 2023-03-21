@@ -21,11 +21,19 @@ export class BaseNone {
     toBase64(): string {
         return bytesToBase64(this._raw);
     }
+    toBigInt(): BigInt {
+        return BigInt("0x" + this.toHex());
+    }
     toBinary(): string {
         return bytesToBinary(this._raw);
     }
     toHex(): string {
         return BytesToHex(this._raw);
+    }
+    toNumber(): number {
+        const int = BigInt("0x" + this.toHex());
+        if (int > BigInt(Number.MAX_SAFE_INTEGER)) throw new Error("Number is too large");
+        return Number(int);
     }
     toUTF8(): string {
         let utf8decoder = new TextDecoder('utf-8');
@@ -46,6 +54,10 @@ export class BaseNone {
     }
     static fromHex(hex: string): BaseNone {
         return new BaseNone(HexToBytes(hex));
+    }
+    static fromNumber(num: number | bigint): BaseNone {
+        const bin = padBinary(num.toString(2));
+        return new BaseNone(binaryToBytes(bin));
     }
     static fromUTF8(utf8: string): BaseNone {
         let utf8encoder = new TextEncoder();
